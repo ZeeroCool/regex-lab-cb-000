@@ -24,11 +24,13 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone)
-  if phone.match(/^[1-9]\d{2}-\d{3}-\d{4}/)
+  if phone.match(/^^\([1-9]\d{2}\)\d{3}-\d{4}/) #(718)891-1313
     true
-  elsif phone.match(/^\(\d{3}\)\s\d{3}-\d{4}/)
+  elsif phone.match(/^\([1-9]\d{2}\)\d{7}/) #(800)4261134
     true
-  elsif phone.match(/\d{10}/)
+  elsif phone.match(/^[1-9]\d{2} \d{3} \d{4}/) #234 435 9978
+    true
+  elsif phone.match(/\d{10}/) #234 435 9978
     true
   else 
     false
