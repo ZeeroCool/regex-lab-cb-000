@@ -32,7 +32,7 @@ def valid_phone_number?(phone)
     true
   elsif phone.match(/\d{10}/) #234 435 9978
     true
-  else 
+  else
     false
   end
 end
